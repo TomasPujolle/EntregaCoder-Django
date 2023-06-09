@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.template import loader
 
  
 
@@ -13,14 +13,8 @@ def mi_nombre(request, nombre):
 def contexto (request):
     dic = {"nombre": "Tomas", "ape": "Pujolle"}
 
-    mi_html = open('./Entrega/plantillas/index.html')
+    plantilla = loader.get_template('index.html')
 
-    plantilla = Template(mi_html.read())
-
-    mi_html.close()
-
-    contexto = Context(dic)
-
-    docu = plantilla.render(contexto)
-
+    docu = plantilla.render(dic)
     return HttpResponse(docu)
+
