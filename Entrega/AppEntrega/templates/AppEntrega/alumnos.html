@@ -23,28 +23,24 @@
 
 {% block main %}
 
-<section class="py-5 border-bottom" id="features">
-    <div class="container px-5 my-5">
-        <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                
-                <h2 class="h4 fw-bolder">Featured title</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <h2 class="h4 fw-bolder">Featured title</h2>
-                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a class="text-decoration-none" href="#!">
-                    Call to action
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+<div class="row">
+    <form action=""    method="POST">
+        {% csrf_token %}
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="nombre">
     </div>
-</section>
+    <br>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" name="apellido">
+    </div>
+    <br>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" name="email">
+      </div>
+      <br>
+     
+    <button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
+</form>
+  </div>
 
 {% endblock main %}
