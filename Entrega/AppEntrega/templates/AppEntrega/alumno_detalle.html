@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-    CURSOS
+ALUMNOS
 {% endblock titulo %}
 
 {% block header %}
@@ -12,8 +12,8 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Buesqueda de cursos </h1>
-                            <p class="lead text-white-50 mb-4"></p>
+                            <h1 class="display-5 fw-bolder text-white mb-2">ALUMNOS </h1>
+                            <p class="lead text-white-50 mb-4">Detalle de alumno</p>
                             <a href="{% url 'mostrar_cursos' %}" type="button" class="btn btn-light">Volver</a>
                         </div>
                     </div>
@@ -24,12 +24,12 @@
 
 {% block main %}
 
-
-    <form action="" method="POST"> {% csrf_token %}
-        <table class="form-control">
-                {{ miFormulario.as_table }}
-        </table>
-        <button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
-    </form>
+<div class="card text-white bg-secondary mb-3" style="width: 40rem; margin-left: 20rem;">
+    <div class="card-body">
+        <h4 class="card-title">Nombre: {{ alumno.nombre }}</h4>
+        <h5 class="card-title">Camada: {{ alumno.apellido }}</h5>
+        <h6 class="card-title">E-mail: {{ alumno.email }}</h6>
+    </div>
+  </div>
 
 {% endblock main %}

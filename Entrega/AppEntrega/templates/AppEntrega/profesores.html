@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-    PROFERSORES
+PROFESORES
 {% endblock titulo %}
 
 {% block header %}
@@ -13,7 +13,8 @@
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2"> PROFESORES </h1>
-                            <p class="lead text-white-50 mb-4">Agregar y ver profesores</p>
+                            <p class="lead text-white-50 mb-4">Agregar profesor</p>
+                            <a href="{% url 'mostrar_profesores' %}" type="button" class="btn btn-light">Volver</a>
                         </div>
                     </div>
                 </div> 

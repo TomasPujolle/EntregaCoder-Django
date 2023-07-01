@@ -22,14 +22,24 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-lg-5">
-                <a class="navbar-brand" href="#!">Tomas Alan Pujolle</a>
+                <a class="navbar-brand" href="#!">ENTREGA CODER</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'curso' %}">Curso</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'alumnos' %}">Alumnos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'profesores' %}">Profesores</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'mostrar_cursos' %}">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'mostrar_alumnos' %}">Alumnos</a></li>
+                        <li class="nav-item"><a class="nav-link " href="{% url 'mostrar_profesores' %}">Profesores</a></li>
+                        <li class="nav-item"><a class="nav-link link-danger" href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link link-success" href="{% url 'login' %}">Iniciar sesion</a></li>
+                        <li class="nav-item"><a class="nav-link link-warning" href="{% url 'register' %}">Crear cuenta</a></li>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                        <li class="lead text-white-50" style="font-size: 1,7rem;"> Bienvenido, {{user.username}}</li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -40,8 +50,8 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Bienvenido al instituto santa maria de nazareth </h1>
-                            <p class="lead text-white-50 mb-4">Chequea y almazena tus datos de la mejor manera!</p>
+                            <h1 class="display-5 fw-bolder text-white mb-2">TOMAS ALAN PUJOLLE</h1>
+                            <p class="lead text-white-50 mb-4">Desarrollador</p>
                         </div>
                     </div>
                 </div> 
@@ -50,10 +60,11 @@
         {% endblock header %}
         <br><br>
 
+        
         {% block main %}
 
         {% endblock main %}
-
+    
         <br><br>
         
 

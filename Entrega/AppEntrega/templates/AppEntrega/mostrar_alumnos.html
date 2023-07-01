@@ -1,0 +1,40 @@
+{% extends 'AppEntrega/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    ALUMNOS
+{% endblock titulo %}
+
+{% block header %}
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">ALUMNOS</h1>
+                            <p class="lead text-white-50 mb-4">Lista de alumnos</p>
+                            <a href="{% url 'alumnos' %}" type="button" class="btn btn-light">Agregar Alumno</a>
+                            <a href="{% url 'buscar_alumno' %}" type="button" class="btn btn-light">Buscar alumno</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </header>
+        {% endblock header %}
+
+{% block main %}
+
+{% for a in alumnos %}
+<div class="card text-white bg-secondary mb-3" style="width: 40rem; margin-left: 35rem;">
+    <div class="card-body">
+        <h4 class="card-title">Nombre: {{ a.nombre }}</h4>
+        <h5 class="card-title">Apellido: {{ a.apellido }}</h5>
+    </div>
+    <a href="{% url 'eliminar_alumno' a.id %}" type="button" class="btn btn-light">Eliminar</a>
+    <a href="{% url 'alumno_detalle' a.id %}" type="button" class="btn btn-light">Detalle</a>
+  </div>
+{% endfor %}
+
+
+{% endblock main %}

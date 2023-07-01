@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-    CURSOS
+    ALUMNOS
 {% endblock titulo %}
 
 {% block header %}
@@ -12,9 +12,9 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">CURSOS </h1>
-                            <p class="lead text-white-50 mb-4">La lista de cursos buscados</p>
-                            <a href="{% url 'mostrar_cursos' %}" type="button" class="btn btn-light">Volver</a>
+                            <h1 class="display-5 fw-bolder text-white mb-2">ALUMNOS</h1>
+                            <p class="lead text-white-50 mb-4">La lista de alumnos buscados</p>
+                            <a href="{% url 'mostrar_alumnos' %}" type="button" class="btn btn-light">Volver</a>
                         </div>
                     </div>
                 </div> 
@@ -24,17 +24,17 @@
 
 {% block main %}
 
-        {% for curso in cursos %}
+        {% for a in alumnos %}
         
         
         
         <div class="card text-white bg-secondary mb-3" style="width: 40rem; margin-left: 20rem;">
-            <div class="card-header">Curso: {{ curso.nombre }}</div>
             <div class="card-body">
-              <h5 class="card-title">Camada: {{ curso.camada }}</h5>
+                <h4 class="card-title">Nombre: {{ a.nombre }}</h4>
+                <h5 class="card-title">Apellido: {{ a.apellido }}</h5>
             </div>
-            <a href="{% url 'eliminar_curso' curso.id %}" type="button" class="btn btn-light">Eliminar</a>
-            <a href="{% url 'curso_detalle' curso.id %}" type="button" class="btn btn-light">Detalle</a>
+            <a href="{% url 'eliminar_alumno' a.id %}" type="button" class="btn btn-light">Eliminar</a>
+            <a href="{% url 'alumno_detalle' a.id %}" type="button" class="btn btn-light">Detalle</a>
           </div>
 
         {% endfor %}

@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block titulo %}
-    CURSOS
+    ALUMNOS
 {% endblock titulo %}
 
 {% block header %}
@@ -12,10 +12,9 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">AGREGAR CURSO</h1>
+                            <h1 class="display-5 fw-bolder text-white mb-2">Buesqueda de alumno </h1>
                             <p class="lead text-white-50 mb-4"></p>
-                            <a href="{% url 'mostrar_cursos' %}" type="button" class="btn btn-light">Volver</a>
-                            
+                            <a href="{% url 'mostrar_alumnos' %}" type="button" class="btn btn-light">Volver</a>
                         </div>
                     </div>
                 </div> 
@@ -26,20 +25,11 @@
 {% block main %}
 
 
-    <div class="row">
-        <form action=""    method="POST">
-            {% csrf_token %}
-        <div class="col" >
-          <input type="text" class="form-control" placeholder="Materia" aria-label="Materia" name="nombre">
-        </div>
-        <br>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Camada" aria-label="camada" name="camada">
-        </div>
-        <br>
-         
+    <form action="" method="POST"> {% csrf_token %}
+        <table class="form-control">
+                {{ miFormulario.as_table }}
+        </table>
         <button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
     </form>
-      </div>
 
 {% endblock main %}
