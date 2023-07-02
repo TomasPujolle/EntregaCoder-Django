@@ -18,7 +18,7 @@ urlpatterns = [
     path('mostrar_profesores/', views.mostrar_profesores, name='mostrar_profesores'),
     path('buscar-profesor/', views.buscar_profesor, name="buscar_profesor"),
     path('eliminar-profesor/<id>/', views.eliminar_profesor, name="eliminar_profesor"),
-    path('curso_detalle/<pk>/', views.ProfesorDetalle.as_view(), name="profesor_detalle"),
+    path('profesor_detalle/<pk>/', views.ProfesorDetalle.as_view(), name="profesor_detalle"),
 
     path('curso/', views.curso, name='curso'),
     path('mostrar_cursos/', views.mostrar_cursos, name='mostrar_cursos'),
@@ -32,4 +32,3 @@ urlpatterns = [
     path('logout/', views.Logout.as_view(), name='logout'),
 ]
  
-urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

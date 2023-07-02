@@ -147,12 +147,12 @@ class Logout(LogoutView):
 
 class CursoDetalle(DetailView):
     model = Curso
-    template_name = "Appentrega/curso_detalle.html"
+    template_name = "AppEntrega/curso_detalle.html"
 
 class AlumnoDetalle(DetailView):
     model = Alumno
-    template_name = "Appentrega/alumno_detalle.html"
+    template_name = "AppEntrega/alumno_detalle.html"
 
 class ProfesorDetalle(DetailView):
     model = Profesor
-    template_name = "Appentrega/profesor_detalle.html"
+    template_name = "AppEntrega/profesor_detalle.html"

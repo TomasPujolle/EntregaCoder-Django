@@ -25,16 +25,17 @@
 
 {% block main %}
 
-{% for c in cursos %}
+{% for curso in cursos %}
 
 
 <div class="card text-white bg-secondary mb-3 mark " style="width: 40rem; margin-left: 35rem;">
-    <div class="card-header">Curso: {{ c.nombre }}</div>
+    <div class="card-header">Curso: {{ curso.nombre }}</div>
     <div class="card-body">
-      <h5 class="card-title">Camada: {{ c.camada }}</h5>
+      <h5 class="card-title">Camada: {{ curso.camada }}</h5>
     </div>
-    <a href="{% url 'eliminar_curso' c.id %}" type="button" class="btn btn-light">Eliminar</a>
-    <a href="{% url 'curso_detalle' c.id %}" type="button" class="btn btn-light">Detalle</a>
+    <a href="{% url 'eliminar_curso' curso.id %}" type="button" class="btn btn-light">Eliminar</a>
+    <a href="{% url 'curso_detalle' curso.id %}" type="button" class="btn btn-light">Detalle</a>
+    
 </div>
 
 {% endfor %}
